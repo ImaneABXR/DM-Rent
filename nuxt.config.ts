@@ -10,15 +10,15 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss', 'nuxt-icons'
   ],
-  vite: {
-    server: {
-      proxy: {
-        '/api': {
-          target: 'https://dm-assignment-commonshare.koyeb.app/api',
-          changeOrigin: true,
-          // rewrite: (path) => path.replace(/^\/api/, '')
-        }
-      },
-    }
-  },
+  // vite: {
+  //   server: {
+  //     proxy: {
+  //       '/api': {
+  //         target: 'https://dm-assignment-commonshare.koyeb.app/api',
+  //         changeOrigin: true,
+  //         // rewrite: (path) => path.replace(/^\/api/, '')
+  //       }
+  //     },
+  //   }
+  // },
 })
