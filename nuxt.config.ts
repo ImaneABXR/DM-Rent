@@ -6,7 +6,9 @@ export default defineNuxtConfig({
     }
   },
   devtools: { enabled: true },
-  
+  experimental: {
+    renderJsonPayloads: false
+  },
   modules: [
     '@nuxtjs/tailwindcss', 'nuxt-icons',  '@pinia/nuxt',
   ],

@@ -5,16 +5,20 @@ export const useFavoriteStore = defineStore({
   id: 'favorites-store',
   state: () => {
     return {
-      favorites: Array<Object>,
+      favorites: Object,
     }
   },
   actions: {
-    addValueToFavoritesList(value: Object) {
-      this.favorites.push(value)
+    addCarToFavoritesList(key: string, value: Object) {     
+      if (this.favorites.hasOwnProperty(key)) {
+        delete this.favorites[key];
+      } else {
+        this.favorites[key] = value
+      }
     },
 
   },
   getters: {
-    favorites: state => state.favorites,
+    favoritesList: state => state.favorites,
   },
 })

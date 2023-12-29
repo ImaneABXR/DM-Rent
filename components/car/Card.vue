@@ -2,11 +2,18 @@
   <div class="bg-white rounded-xl p-5 h-full min-w-96">
     <div class="flex justify-between">
       <div>
-        <div class="font-bold text-lg">{{ car.name }}</div>
+        <div class="font-bold text-lg">
+          {{ car.name }}
+        </div>
         <div class="text-sm text-secondary-300">{{ car.type }}</div>
       </div>
-      <div class="mr-6">
-        <nuxt-icon name="heart" :filled="true" />
+      <div class="mr-6 cursor-pointer">
+        <nuxt-icon
+          name="heart"
+          class="text-red-500"
+          :filled="!favoritesList[car.id]"
+          @click="addCarToFavoritesList(car.id, car)"
+        />
       </div>
     </div>
     <div class="flex items-center justify-center w-full">
@@ -43,15 +50,19 @@
 
 <script setup>
 import ButtonVue from "../global/Button.vue";
+import { useFavoriteStore } from "~/store/favorite";
+import { storeToRefs } from "pinia";
+
+const favoriteStore = useFavoriteStore();
+const { addCarToFavoritesList } = favoriteStore;
+const { favoritesList } = storeToRefs(favoriteStore);
+
 const props = defineProps({
   car: {
     type: Object,
     required: true,
   },
-  staticWidth: {
-    type: Boolean,
-    default: false,
-  },
 });
-const { car, staticWidth } = props;
+
+const { car } = props;
 </script>
