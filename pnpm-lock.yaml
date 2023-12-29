@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@pinia/nuxt':
+    specifier: ^0.5.1
+    version: 0.5.1(vue@3.3.13)
   nuxt-icons:
     specifier: ^3.2.1
     version: 3.2.1
@@ -1223,6 +1226,19 @@ packages:
       '@parcel/watcher-win32-ia32': 2.3.0
       '@parcel/watcher-win32-x64': 2.3.0
     dev: true
+
+  /@pinia/nuxt@0.5.1(vue@3.3.13):
+    resolution: {integrity: sha512-6wT6TqY81n+7/x3Yhf0yfaJVKkZU42AGqOR0T3+UvChcaOJhSma7OWPN64v+ptYlznat+fS1VTwNAcbi2lzHnw==}
+    dependencies:
+      '@nuxt/kit': 3.9.0
+      pinia: 2.1.7(vue@3.3.13)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - rollup
+      - supports-color
+      - typescript
+      - vue
+    dev: false
 
   /@pkgjs/parseargs@0.11.0:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
